@@ -16,19 +16,18 @@ Información adicional:
 - Subiré una posible solución al ejercicio el lunes siguiente al de su publicación. """
 
 
-
 def anagram(word1: str, word2: str) -> bool:
-    are_anagrams = False
+    if len(word1) != len(word2):
+        return False
+    
+    sorted_word1 = sorted(word1)
+    sorted_word2 = sorted(word2)
+    
+    return sorted_word1 == sorted_word2
 
+word_test = input("Enter a word: ")
+word_test2 = input("Enter another word: ")
 
+are_anagram = anagram(word_test, word_test2)
 
-    return are_anagrams
-
-
-worl_test = input ("Enter a world: ")
-worl_test2 = input ("Enter a world2: ")
-
-
-are_anagram = anagram (worl_test, worl_test2)
-
-print(are_anagram)
+print(f"Are words anagrams? {are_anagram}")
